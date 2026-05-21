@@ -4,6 +4,9 @@ $start = microtime(true); // Captures timestamp (simulates request arrival)
 echo "1. Request initiated.\n";
 
 function process(?string $payload): string {
+	if($payload === null) {
+		return "2. Processed: [Empty Input]";
+	}
     return "2. Processed: " . strtoupper($payload); // Returns data, doesn't print
 }
 
